@@ -46,5 +46,8 @@
     "bluebird": "^3.7.2",
     "sass": "^1.63.3",
     "sass-loader": "^10.4.1"
-  }
+  },
+  "engines": {
+  "node": "v20.12.2"
+}
 }

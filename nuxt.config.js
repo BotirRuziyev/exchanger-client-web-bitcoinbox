@@ -20,7 +20,7 @@ const robotsExpressions = robotsConfig.Disallow.map(el => new RegExp("^" + el.re
 
 module.exports = {
   telemetry: false,
-  target: process.env.NUXT_TARGET || config_creator.get("targetBuild") || "static",
+  target: "static",
   server: {
     port: process.env.NUXT_PORT || config_creator.get("server:dev:port"),
     host: process.env.NUXT_HOST || config_creator.get("server:dev:host")
@@ -35,7 +35,7 @@ module.exports = {
     interval: 40,
     exclude: [/^(?=.*\buser\b).*$/]
   },
-  ssr: config_creator.get("buildSSR") || false,
+  ssr: false,
   head: {
     titleTemplate: `%s - ${config_creator.get("projectName")}`,
     meta: [{ charset: "utf-8" }, { name: "viewport", content: "width=device-width, initial-scale=1" }],
