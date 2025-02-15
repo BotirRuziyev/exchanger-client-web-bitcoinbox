@@ -1,0 +1,371 @@
+.exchange-page {
+    position: relative;
+    z-index: 3;
+    .title {
+        margin-bottom: 40px;
+        position: relative;
+        z-index: 3;
+        font-family: var(--third-family);
+        font-weight: 600;
+        font-size: 54px;
+        line-height: 89%;
+        text-align: center;
+        color: $white;
+        text-shadow:
+            0 12px 4px 0 #121212,
+            0 8px 4px 0 #121212;
+        span {
+            display: block;
+            font-family: var(--third-family);
+            font-weight: 600;
+            color: $white;
+            color: #fe9033;
+        }
+    }
+    .crypto-exchange {
+        max-width: 1010px;
+        margin: 0 auto;
+        padding: 0 20px;
+        position: relative;
+        z-index: 3;
+        .crypto-exchange__form {
+            margin-bottom: 88px;
+            .exchange-item__wrapper {
+                display: flex;
+                gap: 20px;
+                position: relative;
+                margin-bottom: 20px;
+                .exchange-item {
+                    width: 100%;
+                    background: #1b1c1e;
+                    border: 1px solid rgba(50, 51, 52, 0.4);
+                    border-radius: 12px;
+                    box-shadow: inset 0 0 16px 0 #1e1e1e;
+                    padding: 24px 24px 40px;
+                    position: relative;
+                    &:nth-child(3) {
+                        &::after {
+                            transform: rotate(-180deg);
+                        }
+                    }
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 8px;
+                        background: linear-gradient(90deg, #fe9033 0%, rgba(254, 144, 51, 0) 100%);
+                        border-radius: 0 0 12px 12px;
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                    }
+                    .exchange-head {
+                        min-height: 25px;
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        margin-bottom: 12px;
+                        .label {
+                            min-height: auto;
+                            margin: 0;
+                            font-family: var(--second-family);
+                            font-weight: 400;
+                            line-height: 14px;
+                            font-size: 14px;
+                            color: $white;
+                            opacity: 0.4;
+                        }
+                        .min-and-max {
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            .min-val,
+                            .max-val {
+                                background: #101010;
+                                border-radius: 8px;
+                                padding: 8px 12px;
+                                font-family: var(--font4);
+                                font-weight: 700;
+                                font-size: 13px;
+                                line-height: 8px;
+                                color: #7a8089;
+                                span {
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+                    .form-control {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 16px;
+                        max-height: 60px;
+                        padding: 16px;
+                        background: #101010;
+                        border-radius: 12px;
+                        position: relative;
+                        z-index: 2;
+                        .form-input {
+                            width: 100%;
+                            input {
+                                width: 100%;
+                                height: 100%;
+                                background-color: transparent;
+                                font-family: var(--font4);
+                                font-weight: 700;
+                                font-size: 24px;
+                                line-height: 100%;
+                                color: $white;
+                                &::placeholder {
+                                    font-weight: 700;
+                                    font-size: 24px;
+                                    line-height: 100%;
+                                    color: $white;
+                                }
+                            }
+                        }
+                        .border-left {
+                            width: 1px;
+                            height: 24px;
+                            background: rgba(103, 103, 103, 0.35);
+                        }
+                        .form-select {
+                            max-width: 114px;
+                            width: 100%;
+                            position: relative;
+                            .select-name {
+                                display: flex;
+                                flex-direction: column;
+                                align-items: end;
+                                .coin-name {
+                                    margin-bottom: 2px;
+                                    font-family: var(--second-family);
+                                    font-weight: 500;
+                                    font-size: 15px;
+                                    line-height: 100%;
+                                    color: $white;
+                                }
+                                span {
+                                    font-family: var(--second-family);
+                                    font-weight: 450;
+                                    font-size: 13px;
+                                    line-height: 100%;
+                                    color: #7a8089;
+                                }
+                            }
+                            .select-btn {
+                                display: flex;
+                                align-items: center;
+                                justify-content: end;
+                                gap: 10px;
+                                cursor: pointer;
+                                user-select: none;
+                            }
+                            .select-menu {
+                                min-width: 100%;
+                                background: #40464e;
+                                background: #101010;
+                                border-radius: 8px;
+                                overflow: hidden;
+                                position: absolute;
+                                top: calc(100% + 20px);
+                                right: 0;
+                                visibility: hidden;
+                                opacity: 0;
+                                transition: 0.2s;
+                                &.open-menu {
+                                    visibility: visible;
+                                    opacity: 1;
+                                }
+                                .select-option {
+                                    display: flex;
+                                    align-items: center;
+                                    gap: 10px;
+                                    padding: 5px 10px;
+                                    cursor: pointer;
+                                    user-select: none;
+                                    transition: 0.3s;
+                                    &.selected {
+                                        background: #323334;
+                                    }
+                                    &:hover {
+                                        background: #323334;
+                                    }
+                                    .select-name {
+                                        align-items: start;
+                                    }
+                                    .coin-img {
+                                        img {
+                                            max-height: 24px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .swap-btn {
+                    border-radius: 50px;
+                    padding: 12px;
+                    width: 44px;
+                    height: 44px;
+                    border: 0;
+                    cursor: pointer;
+                    background: rgba(254, 144, 51, 0.6);
+                    position: absolute;
+                    top: calc(50% + 20px);
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 2;
+                }
+            }
+            .crypto-exchange-form__bottom {
+                background: #101010;
+                border-radius: 12px;
+                padding: 16px;
+                .form-group {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 10px;
+                    margin-bottom: 16px;
+                    .form-control {
+                        .form-input {
+                            input {
+                                background: rgba(243, 243, 244, 0.08);
+                                border: 1px solid rgba(243, 243, 244, 0.08);
+                                border-radius: 8px;
+                                padding: 13px 16px;
+                                font-family: var(--second-family);
+                                font-weight: 400;
+                                font-size: 14px;
+                                line-height: 10px;
+                                color: #afb2b7;
+                                transition: 0.2s;
+                                &:focus {
+                                    border-color: $white;
+                                }
+                            }
+                        }
+                        .exchange-btn {
+                            width: 100%;
+                            height: 100%;
+                            background: #fe9033;
+                            border-radius: 8px;
+                            padding: 12px 40px;
+                            font-family: var(--font7);
+                            font-weight: 500;
+                            font-size: 16px;
+                            line-height: 100%;
+                            text-align: center;
+                            color: $white;
+                        }
+                    }
+                }
+                .terms-consent {
+                    display: flex;
+                    align-items: center;
+                    justify-content: end;
+                    gap: 8px;
+                    .form-switch {
+                        display: flex;
+                        cursor: pointer;
+                        input {
+                            display: none;
+                            &:checked + .form-switch__btn .switch-round {
+                                opacity: 1;
+                                left: 14px;
+                            }
+                        }
+                        .form-switch__btn {
+                            display: block;
+                            width: 30px;
+                            height: 20px;
+                            background-color: #2c2d30;
+                            border-radius: 4px;
+                            position: relative;
+                            .switch-round {
+                                width: 12px;
+                                height: 12px;
+                                border-radius: 3px;
+                                background: #d9d9d9;
+                                opacity: 0.4;
+                                position: absolute;
+                                top: 50%;
+                                left: 4px;
+                                transform: translateY(-50%);
+                                transition: 0.3s;
+                            }
+                        }
+                    }
+                    span {
+                        font-family: var(--second-family);
+                        font-weight: 400;
+                        font-size: 13px;
+                        line-height: 100%;
+                        color: #afb2b7;
+                        a {
+                            text-decoration: underline;
+                            text-decoration-skip-ink: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .our-partners {
+        max-width: 1340px;
+        margin: 0 auto;
+        padding: 0 20px;
+        margin-bottom: 44px;
+        position: relative;
+        z-index: 3;
+
+        &__title {
+            margin-bottom: 33px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid rgba(122, 128, 137, 0.2);
+            font-family: var(--second-family);
+            font-weight: 400;
+            text-align: center;
+            font-size: 14px;
+            line-height: 100%;
+            color: #7a8089;
+        }
+        &__list {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .list-item {
+                // &:hover {
+                //     img {
+                //         filter: invert(63%) sepia(74%) saturate(1183%) hue-rotate(335deg) brightness(101%) contrast(99%);
+                //     }
+                // }
+                // img {
+                //     transition: 0.2s;
+                // }
+            }
+        }
+    }
+    .exchange-right__bg {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: -137px;
+        right: 0;
+        z-index: -1;
+    }
+    .exchange-center__bg {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: -137px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: -1;
+    }
+}

@@ -1,0 +1,130 @@
+.footer {
+  padding: 0 30px 17px;
+  position: relative;
+  z-index: 4;
+  &-in {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    gap: 18px;
+    padding: 40px;
+    background: url("~assets/img/footer-bg.png") no-repeat;
+    background-position: left top;
+    background-size: cover;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    .footer-left__block {
+      max-width: 224px;
+      width: 100%;
+      .logo {
+        margin-bottom: 16px;
+        img {
+          height: 29px;
+        }
+      }
+      .cryptocurrency-exchange,
+      .reserved {
+        margin-bottom: 16px;
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        letter-spacing: 0.01em;
+        color: #7a8089;
+      }
+
+      .telegram-link {
+        border-radius: 100%;
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+      }
+    }
+    .footer-nav {
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      border-left: 1px solid rgba(122, 128, 137, 0.4);
+      border-right: 1px solid rgba(122, 128, 137, 0.4);
+      .head {
+        margin-bottom: 28px;
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #7a8089;
+      }
+      .nav-link__list {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        .nav-link {
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 143%;
+          color: $white;
+          transition: 0.2s;
+          &:hover {
+            color: #fe9033;
+          }
+        }
+      }
+    }
+    .footer-support {
+      max-width: 227px;
+      background-color: transparent;
+      .head {
+        margin-bottom: 16px;
+        font-family: var(--second-family);
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 150%;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #7a8089;
+      }
+      .support-item {
+        margin-bottom: 16px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .label {
+          min-height: auto;
+          margin: 0;
+          font-family: var(--second-family);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 21px;
+          letter-spacing: 0.01em;
+          color: #7a8089;
+        }
+        .email-link {
+          transition: 0.2s;
+          &:hover {
+            color: #fe9033;
+          }
+        }
+        .email-link,
+        .working-hours {
+          font-family: var(--second-family);
+          font-weight: 450;
+          font-size: 15px;
+          line-height: 150%;
+          letter-spacing: 0.01em;
+          color: #fff;
+        }
+        .working-hours__about {
+          font-family: var(--second-family);
+          font-weight: 450;
+          font-size: 13px;
+          line-height: 120%;
+          letter-spacing: 0.01em;
+          color: $white;
+          opacity: 0.4;
+        }
+      }
+    }
+  }
+}

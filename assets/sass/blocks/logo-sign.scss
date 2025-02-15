@@ -1,0 +1,43 @@
+.registration {
+  ul {
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    margin: 0px 6px 0px 0px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    .btn-round {
+      border-color: #7a8089;
+      font-family: var(--second-family);
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 100%;
+      text-align: center;
+      color: $white;
+      &-white {
+        border: 1px solid transparent;
+        color: $black;
+        font-weight: 500;
+        &:hover {
+          border-color: #7a8089;
+          color: $white;
+        }
+      }
+    }
+
+    @include respond-to(tablet) {
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+
+  a {
+    cursor: pointer;
+  }
+}

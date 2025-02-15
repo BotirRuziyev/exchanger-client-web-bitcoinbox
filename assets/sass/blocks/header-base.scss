@@ -1,0 +1,17 @@
+.header {
+  padding: 24px 30px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 100;
+  .header-container {
+    max-width: 1380px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    .border-left {
+      width: 1px;
+      height: 24px;
+      background: rgba(255, 255, 255, 0.35);
+    }
+  }
+}
