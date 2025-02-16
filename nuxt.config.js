@@ -26,6 +26,7 @@ module.exports = {
     host: process.env.NUXT_HOST || config_creator.get("server:dev:host")
   },
   router: {
+    base: "/",
     trailingSlash: true
   },
   generate: {
@@ -33,7 +34,8 @@ module.exports = {
     routes: async () => generateRoutes(),
     concurrency: 100,
     interval: 40,
-    exclude: [/^(?=.*\buser\b).*$/]
+    exclude: [/^(?=.*\buser\b).*$/],
+    fallback: true,
   },
   ssr: config_creator.get("buildSSR") || false,
   head: {
