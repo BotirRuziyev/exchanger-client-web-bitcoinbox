@@ -2,6 +2,9 @@
   padding: 0 30px 18px;
   position: relative;
   z-index: 4;
+  @include respond-to(phone) {
+    padding: 0 14px 20px;
+  }
   &-in {
     max-width: 1300px;
     margin: 0 auto;
@@ -14,11 +17,30 @@
     border-radius: 12px;
     position: relative;
     z-index: 2;
+    @include respond-to(tablet) {
+      padding: 24px 20px;
+    }
+    @include respond-to(phone) {
+      background: url("~assets/img/footer-mobile-bg.png") no-repeat;
+      background-size: 100%;
+      flex-direction: column;
+      gap: 30px;
+    }
+    @include respond-to(telephone) {
+      background-size: cover;
+    }
     .footer-left__block {
       max-width: 224px;
       width: 100%;
+      @include respond-to(phone) {
+        order: 2;
+        max-width: 100%;
+      }
       .logo {
         margin-bottom: 16px;
+        @include respond-to(phone) {
+          display: none;
+        }
         img {
           height: 29px;
         }
@@ -32,6 +54,9 @@
         line-height: 150%;
         letter-spacing: 0.01em;
         color: #7a8089;
+        @include respond-to(phone) {
+          margin-bottom: 8px;
+        }
       }
 
       .telegram-link {
@@ -43,8 +68,23 @@
       width: 100%;
       display: flex;
       justify-content: space-around;
+      gap: 10px;
       border-left: 1px solid rgba(122, 128, 137, 0.4);
       border-right: 1px solid rgba(122, 128, 137, 0.4);
+      padding: 0 10px;
+      @include respond-to(phone) {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+        border: 0;
+        border-top: 1px solid rgba(122, 128, 137, 0.4);
+        order: 3;
+        padding: 0;
+        padding-top: 30px;
+      }
+      @media (max-width: 519px) {
+        justify-content: start;
+      }
       .head {
         margin-bottom: 28px;
         font-family: var(--second-family);
@@ -54,11 +94,17 @@
         letter-spacing: 0.12em;
         text-transform: uppercase;
         color: #7a8089;
+        @include respond-to(phone) {
+          margin-bottom: 20px;
+        }
       }
       .nav-link__list {
         display: flex;
         flex-direction: column;
         gap: 18px;
+        @include respond-to(phone) {
+          margin-bottom: 12px;
+        }
         .nav-link {
           font-family: var(--second-family);
           font-weight: 400;
@@ -75,6 +121,10 @@
     .footer-support {
       max-width: 227px;
       background-color: transparent;
+      @include respond-to(phone) {
+        order: 1;
+        max-width: 100%;
+      }
       .head {
         margin-bottom: 16px;
         font-family: var(--second-family);

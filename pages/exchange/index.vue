@@ -95,26 +95,33 @@
     </div>
     <div class="our-partners">
       <div class="our-partners__title">Наши партнеры:</div>
-      <ul class="our-partners__list">
-        <li class="list-item">
-          <img src="~assets/img/binance.svg" alt="" />
-        </li>
-        <li class="list-item">
-          <img src="~assets/img/coinbase.svg" alt="" />
-        </li>
-        <li class="list-item">
-          <img src="~assets/img/bitcoin2.svg" alt="" />
-        </li>
-        <li class="list-item">
-          <img src="~assets/img/tether.svg" alt="" />
-        </li>
-        <li class="list-item">
-          <img src="~assets/img/bitmex.svg" alt="" />
-        </li>
-        <li class="list-item">
-          <img src="~assets/img/bestchange.svg" alt="" />
-        </li>
-      </ul>
+      <div class="our-partners__in">
+        <ul class="our-partners__list">
+          <li class="list-item">
+            <img src="~assets/img/binance.svg" alt="" />
+          </li>
+          <div class="border-left"></div>
+          <li class="list-item">
+            <img src="~assets/img/coinbase.svg" alt="" />
+          </li>
+          <div class="border-left"></div>
+          <li class="list-item">
+            <img src="~assets/img/bitcoin2.svg" alt="" />
+          </li>
+          <div class="border-left"></div>
+          <li class="list-item">
+            <img src="~assets/img/tether.svg" alt="" />
+          </li>
+          <div class="border-left"></div>
+          <li class="list-item">
+            <img src="~assets/img/bitmex.svg" alt="" />
+          </li>
+          <div class="border-left"></div>
+          <li class="list-item">
+            <img src="~assets/img/bestchange.svg" alt="" />
+          </li>
+        </ul>
+      </div>
     </div>
     <div class="exchange-right__bg">
       <img src="~assets/img/bg-right.png" alt="" />
@@ -157,6 +164,36 @@ export default {
           coinName: "USDT",
           tokenStandard: "TRC20",
           img: usdt,
+        },
+        {
+          id: 3,
+          coinName: "BTC",
+          tokenStandard: "BTC",
+          img: bitcoin,
+        },
+        {
+          id: 4,
+          coinName: "USDT",
+          tokenStandard: "TRC20",
+          img: usdt,
+        },
+        {
+          id: 5,
+          coinName: "BTC",
+          tokenStandard: "BTC",
+          img: bitcoin,
+        },
+        {
+          id: 6,
+          coinName: "USDT",
+          tokenStandard: "TRC20",
+          img: usdt,
+        },
+        {
+          id: 7,
+          coinName: "BTC",
+          tokenStandard: "BTC",
+          img: bitcoin,
         },
       ],
       userName: "",

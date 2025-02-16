@@ -12,26 +12,32 @@
     }
 
     .btn-round {
+      width: 136px;
+      padding: 11px;
+      border-radius: 10px;
       border-color: #7a8089;
       font-family: var(--second-family);
       font-weight: 400;
       font-size: 14px;
-      line-height: 100%;
+      line-height: 14px;
       text-align: center;
       color: $white;
+      @include respond-to(telephone) {
+        width: 90px;
+      }
+      &:hover {
+        border-color: #fe9033;
+        color: $white;
+      }
       &-white {
         border: 1px solid transparent;
         color: $black;
         font-weight: 500;
-        &:hover {
-          border-color: #7a8089;
-          color: $white;
-        }
       }
     }
 
     @include respond-to(tablet) {
-      &:last-child {
+      &:first-child {
         display: none;
       }
     }

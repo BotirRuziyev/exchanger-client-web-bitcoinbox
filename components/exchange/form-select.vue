@@ -1,6 +1,10 @@
 <template>
   <div class="form-select" ref="selectRef">
-    <div class="select-btn" @click="isSelect = !isSelect">
+    <div
+      class="select-btn"
+      @click="isSelect = !isSelect"
+      :class="isSelect ? 'active' : ''"
+    >
       <div class="select-name">
         <div class="coin-name">{{ coinName }}</div>
         <span class="token-standard">{{ tokenStandard }}</span>
@@ -13,18 +17,19 @@
       </div>
     </div>
     <div class="select-menu" :class="isSelect ? 'open-menu' : ''">
-      <div
-        class="select-option"
-        v-for="coin of coinsList"
-        :key="coin.id"
-        @click="changeSelect(coin)"
-      >
-        <div class="coin-img">
-          <img :src="coin.img" alt="" />
-        </div>
-        <div class="select-name">
-          <div class="coin-name">{{ coin.coinName }}</div>
-          <span>{{ coin.tokenStandard }}</span>
+      <div class="select-menu__in">
+        <div
+          class="select-option"
+          v-for="coin of coinsList"
+          :key="coin.id"
+          @click="changeSelect(coin)"
+        >
+          <div class="coin-img">
+            <img :src="coin.img" alt="" />
+          </div>
+          <div class="select-name">
+            <div class="coin-name">{{ coin.coinName }}</div>
+          </div>
         </div>
       </div>
     </div>

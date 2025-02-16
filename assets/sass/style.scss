@@ -9,6 +9,10 @@
   box-sizing: border-box;
   outline: none;
 }
+img,
+svg {
+  vertical-align: middle;
+}
 
 input:invalid {
   box-shadow: none;
@@ -94,6 +98,17 @@ input:invalid {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1;
+    @include respond-to(phone) {
+      width: 1920px;
+      height: 990px;
+      background-size: 2895px 969px;
+    }
+    @include respond-to(telephone) {
+      width: 1946px;
+      height: 1116px;
+      background-size: 2930px 1121px;
+      bottom: -50px;
+    }
   }
 }
 

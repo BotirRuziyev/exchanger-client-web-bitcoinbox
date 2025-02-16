@@ -8,29 +8,36 @@
       </div>
       <div class="border-left"></div>
       <nav class="header-nav">
-        <div class="nav-link__group">
-          <div class="link-item">
+        <div class="nav-link__group" :class="showMenu ? 'show' : ''">
+          <div class="link-item" @click="showMenu = !showMenu" ref="navRef">
             <nuxt-link :to="localePath(`/exchange/`)" class="nav-link">
               <span></span>
               Обмен
             </nuxt-link>
           </div>
-          <div class="link-item">
-            <nuxt-link to="#" class="nav-link">
+          <div class="link-item" @click="showMenu = !showMenu" ref="navRef">
+            <nuxt-link to="/advantages/" class="nav-link">
               <span></span>
               Преимущества
             </nuxt-link>
           </div>
-          <div class="link-item">
-            <nuxt-link to="#" class="nav-link">
+          <div class="link-item" @click="showMenu = !showMenu" ref="navRef">
+            <nuxt-link to="/contacts/" class="nav-link">
               <span></span>
               Контакты
             </nuxt-link>
           </div>
         </div>
         <div class="header-right__block">
-          <div class="dropdown-lang" ref="langRef">
+          <div
+            class="dropdown-lang"
+            ref="langRef"
+            :class="isShow ? 'active' : ''"
+          >
             <div class="inner_dropdown" @click="isShow = !isShow">
+              <div class="lang-icon">
+                <img src="~assets/img/icons/lang-icon.svg" alt="" />
+              </div>
               <div class="dropdown-lang-inner-name">
                 {{ langName }}
               </div>
@@ -50,25 +57,20 @@
                 >
                   <div @click="isShow = false" class="dropdown-lang-inner-img">
                     <div v-if="locale.code === 'ru'">
-                      <img src="~/assets/img/flag/ru.svg" />
                       <span>{{ locale.name }}</span>
                     </div>
                     <div
                       v-else-if="locale.code === 'ua' || locale.code === 'uk'"
                     >
-                      <img src="~/assets/img/flag/uk.svg" />
                       <span>{{ locale.name }}</span>
                     </div>
                     <div v-else-if="locale.code === 'en'">
-                      <img src="~/assets/img/flag/en.svg" />
-                      <span>{{ locale.name }}</span>
+                      <span>Английский</span>
                     </div>
                     <div v-else-if="locale.code === 'pl'">
-                      <img src="~/assets/img/flag/pl.svg" />
                       <span>{{ locale.name }}</span>
                     </div>
                     <div v-else-if="locale.code === 'es'">
-                      <img src="~/assets/img/flag/es.svg" />
                       <span>{{ locale.name }}</span>
                     </div>
                     <div v-else>
@@ -82,6 +84,9 @@
           <div class="border-left"></div>
           <logo-sign />
         </div>
+        <button class="burger" @click="showMenu = !showMenu" ref="navRef">
+          <img src="~assets/img/icons/burger.svg" alt="" />
+        </button>
       </nav>
     </div>
   </header>
@@ -95,6 +100,7 @@ export default {
   data: () => {
     return {
       isShow: false,
+      showMenu: false,
     };
   },
   components: {
@@ -117,7 +123,7 @@ export default {
       } else if (this.$i18n.locale === "ru") {
         return "Русский";
       } else {
-        return "English";
+        return "Английский";
       }
     },
     // ...mapGetters({
@@ -137,6 +143,14 @@ export default {
     closeOnClickOutside(event) {
       if (!this.$refs.langRef.contains(event.target)) {
         this.isShow = false;
+      }
+      if (!this.$refs.navRef.contains(event.target)) {
+        this.showMenu = false;
+      }
+      if (this.showMenu === true) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "";
       }
     },
   },
